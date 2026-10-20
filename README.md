@@ -39,3 +39,7 @@ $ cp .env.example .env
 ```
 
 Set your environment variables in the `.env` file. Like `OPENAI_API_KEY` value.
+
+```bash
+$ uvicorn main:app  --reload 
+```
