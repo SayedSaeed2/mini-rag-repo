@@ -4,14 +4,14 @@ from .BaseController import BaseController
 from fastapi import UploadFile
 from models import ResponseSignal
 import re
-
-
+from helpers.config import get_settings # Added import
 
 class DataController(BaseController): 
     
     def __init__(self):
         super().__init__()
         self.size_scale = 1024 * 1024  # 1 MB in bytes
+        self.app_settings = get_settings() # Added initialization
     
     def validate_uploaded_file(self, file: UploadFile):
         # Validate file extension
